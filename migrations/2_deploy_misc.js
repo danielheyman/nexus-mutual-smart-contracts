@@ -10,7 +10,7 @@ let factory;
 let exchange;
 let mkr;
 const EXCHANGE_TOKEN = '10000000000000000000000';
-const EXCHANGE_ETHER = 100000000000000000000;
+const EXCHANGE_ETHER = 10000000000000000; // 100000000000000000000;
 
 module.exports = function(deployer, network, accounts) {
   deployer.then(async () => {
@@ -32,7 +32,7 @@ module.exports = function(deployer, network, accounts) {
     await factory.setFactory(mkr.address, exchangeMKR.address);
     await dai.transfer(exchange.address, EXCHANGE_TOKEN);
     await mkr.transfer(exchangeMKR.address, EXCHANGE_TOKEN);
-    await exchange.recieveEther({ value: EXCHANGE_ETHER });
-    await exchangeMKR.recieveEther({ value: EXCHANGE_ETHER });
+    // await exchange.recieveEther({ value: EXCHANGE_ETHER });
+    // await exchangeMKR.recieveEther({ value: EXCHANGE_ETHER });
   });
 };

@@ -28,7 +28,7 @@ module.exports = function(deployer, network, accounts) {
   deployer.then(async () => {
     const Owner = accounts[0];
     const nxms = await NXMaster.deployed();
-    const tk = await NXMToken.deployed();
+    // const tk = await NXMToken.deployed();
     const td = await TokenData.deployed();
     const tf = await TokenFunctions.deployed();
     const tc = await TokenController.deployed();
@@ -45,7 +45,7 @@ module.exports = function(deployer, network, accounts) {
     const gov = await Governance.deployed();
     let propCat = await ProposalCategory.deployed();
     const mr = await MemberRoles.deployed();
-    const factory = await FactoryMock.deployed();
+    // const factory = await FactoryMock.deployed();
     // let gvAdd = await nxms.getLatestAddress("GV");
     // let mrAdd = await nxms.getLatestAddress("MR");
     // let pcAdd = await nxms.getLatestAddress("PC");
@@ -73,8 +73,8 @@ module.exports = function(deployer, network, accounts) {
     const dai = await DAI.deployed();
     // await qd.changeCurrencyAssetAddress('0x444149', dai.address);
     // await qd.changeInvestmentAssetAddress('0x444149', dai.address);
-    await pl1.sendEther({ from: Owner, value: POOL_ETHER });
-    await pl2.sendEther({ from: Owner, value: POOL_ETHER }); //
+    // await pl1.sendEther({ from: Owner, value: POOL_ETHER });
+    // await pl2.sendEther({ from: Owner, value: POOL_ETHER }); //
     await mcr.addMCRData(
       13000,
       '100000000000000000000',
@@ -83,13 +83,13 @@ module.exports = function(deployer, network, accounts) {
       [100, 15517],
       20190103
     );
-    await pl2.saveIADetails(
-      ['0x455448', '0x444149'],
-      [100, 15517],
-      20190103,
-      true
-    ); //testing
-    await dai.transfer(pl2.address, POOL_ASSET);
+    // await pl2.saveIADetails(
+    //   ['0x455448', '0x444149'],
+    //   [100, 15517],
+    //   20190103,
+    //   true
+    // ); //testing
+    // await dai.transfer(pl2.address, POOL_ASSET);
     let mrInstance = await MemberRoles.at(
       await nxms.getLatestAddress('0x4d52')
     );

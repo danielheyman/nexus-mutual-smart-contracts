@@ -37,6 +37,7 @@
   "dependencies": {
     "bitcore-lib": "^0.16.0",
     "eth-lightwallet": "^3.0.1",
+    "truffle-plugin-verify": "^0.3.6",
     "web3": "^0.20.0"
   },
   "devDependencies": {
@@ -54,6 +55,6 @@
     "solhint": "^1.5.1",
     "solidity-coverage": "^0.5.11",
     "truffle": "^5.0.7",
-    "truffle-hdwallet-provider": "0.0.5"
+    "truffle-hdwallet-provider": "^1.0.5"
   }
 }
